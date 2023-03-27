@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+           text-align:center;
+        }
+        h1{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter your name: </h1>
+    <form method="get" action="/test/hello">
+    <input type="text" name="name">
+    <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

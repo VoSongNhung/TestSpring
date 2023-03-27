@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Information</title>
+    <style>
+        body{background-color:#D4F5FB}
+        h1{
+            color:red;
+            text-align:center;
+            font-size:50px;
+        }
+        table{
+            align-item:center;
+            margin: 0px auto;
+
+        }
+        table th, table td {padding: 5px;border: solid #50878E 2px;}
+      .row  {
+         font-style: italic;
+      }
+      .even-row {
+         color: black;
+      }
+      .odd-row {
+         color: blue;
+      }
+    </style>
+</head>
+<body>
+    <h1>List information person </h1>
+<!--    <ul>-->
+<!--        <li th:each="inf : ${listInformation}">-->
+<!--            <span th:text = "*{inf.getId()}"></span>-->
+<!--            <span th:text = "*{inf.getFirstname()}"></span>-->
+<!--            <span th:text = "*{inf.getLastname()}"></span>-->
+<!--        </li>-->
+<!--    </ul>-->
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Address</th>
+        </tr>
+
+        <tr th:each="inf, state : ${listInformation}"
+            class="row" th:classappend="${state.odd} ? 'odd-row' : 'even-row'">
+            <td th:utext="${inf.getId()}"></td>
+<!--            <td th:utext="${inf.getFirstname} + ${inf.getLastname}"></td>-->
+            <td th:utext="${inf.getFirstname}"></td>
+            <td th:utext="${inf.getLastname}"></td>
+            <td th:utext="${inf.getAddress}"></td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+<form th:action="@{/add}"th:object="${inf}"method="post">
+    <p>firstname: <input type="text"th:field="*{firstname}"/></p>
+    <p>lastname: <input type="text"th:field="*{lastname}"/></p>
+    <p>address: <input type="text"th:field="*{address}"/></p>
+    <p><button type="submit"class="btn btn-success">Add</button></p>
+</form>
+</body>
+</html>
